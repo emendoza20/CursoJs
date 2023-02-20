@@ -1,0 +1,1 @@
+Función flecha con un solo parámetro:

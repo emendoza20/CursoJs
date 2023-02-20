@@ -1,0 +1,19 @@
+input[type="number"] {
+    width: 90px;
+    height: 30px;
+    background-color: rgb(189, 224, 236);
+    
+ }
+
+ div .valor{
+     
+    justify-content: center;
+  }
+
+  h1 {
+    color: rgb(28, 28, 208);
+  }
+
+  li strong {
+    margin-right: 80px;
+  }
