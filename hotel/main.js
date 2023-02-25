@@ -8,7 +8,7 @@ document.getElementById("modif-hotel").addEventListener("click", modificarHotel)
 // 	{ nombre: "Hotel B", num_habitaciones: 100, num_plantas: 10, area_total: 2000 },
 // 	{ nombre: "Hotel C", num_habitaciones: 75, num_plantas: 8, area_total: 1500 }
 //   ];
-
+//hola
   const listhoteles = []; //la lista global  de hoteles, se usan cuando se crean los objetos al inicio de la aplicacion
 
   let hotel1 = new Hotel("Hotel A", 20, 5, 300);
