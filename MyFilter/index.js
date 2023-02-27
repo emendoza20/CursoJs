@@ -1,64 +1,65 @@
-const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+debugger
+const myArr = [1, 2, 5, 6, 10];
 
-const arrayCities = ['Barcelona', 'Paris', 'Roma', 'Londres', 'Berlin']
+const cadena = ['Barcelona', 'Paris', 'Roma', 'Londres', 'Berlin'];
 
-const grilloArray = [
-    { name: 'Pepita', surname: 'Grillo', age: 95 },
-    { name: 'Maria', surname: 'Martinez', age: 35 },
-    { name: 'Pepito', surname: 'Grillo', age: 110 },
-    { name: 'Pepito', surname: 'Sanchez', age: 45 }
+const family = [
+	{ name: 'Pepita', surname: 'Grillo', age: 95 },
+	{ name: 'Maria', surname: 'Martinez', age: 35 },
+	{ name: 'Pepito', surname: 'Grillo', age: 110 },
+	{ name: 'Pepito', surname: 'Sanchez', age: 45 }
 ]
-function myFilter(arr, callback) {
 
-    if (arr instanceof Array === false)
-        throw Error('El primer parámetro no es un array')
+function MyFilter(arr, func) {
+	if (!Array.isArray(myArr)) {
+		throw new Error("El primer parámetro debería ser un array");
+	}
 
-    if (typeof callback !== 'function')
-        throw Error('El segundo parámetro no es una función')
+	if (typeof func !== "function") throw Error("Esto no es funcion");
 
-    const newArray = []
-    for (let i = 0; i < arr.length; i++) {
-        if (callback(arr[i]) === true) {
-            newArray.push(arr[i])
-        }
-    }
+	const newArray = [];
 
-    return newArray
+	for (let i = 0; i < arr.length; i++) {
+		if (func(arr[i]) === true) {//llamo a la calback
+			newArray.push(arr[i])
+		}
+	}
+
+	return newArray;
 }
 
-const result1 = myFilter(myArr, isBiggerThanFive)
-console.log(result1)
+// const result1 = MyFilter(myArr,isBiggerThanFive) 
+// console.log(`Numeros mas grandes que 5 son ${result1}`) //  
 
-const result2 = myFilter(myArr, isEvenNumber)
-console.log(result2)
 
-const result3 = myFilter(arrayCities, startsByB)
-console.log(result3)
+// const result2 = MyFilter(myArr,isEvenNumber) 
+// console.log(result2) // [2,4,6,8,10]
 
-const result4 = myFilter(grilloArray, isGrilloFamily)
-console.log(result4)
 
-function isBiggerThanFive(n) {
-    return n > 5
-}
+// const result3 = MyFilter(cadena, startsByB)
+// console.log(result3) // [2,4,6,8,10]
 
-function isEvenNumber(n) {
-    return n % 2 === 0
-}
+const result4 = MyFilter(family, isGrilloFamily)
+console.log(result4) // [2,4,6,8,10]
+// function isBiggerThanFive(num)
+// {
+// 	return num>5
+// }
 
-function startsByB(string) {
-    return string.startsWith('B')
-}
+// function isEvenNumber(num)
+// {
+// 	return(num%2===0)
+// }
 
-//  { name: 'Pepita', surname: 'Grillo', age: 95 },
+// function startsByB(cadena) {
+// 	return cadena[0] === 'B'
+// }
+
 function isGrilloFamily(object) {
-    return object.surname === 'Grillo'
+
+	return object.surname==='Grillo'
+
+
+
+
 }
-
-
-
-
-
-
-
-
